@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'multimedia',
+    loadChildren: () => import('./pages/multimedia/multimedia.module').then( m => m.MultimediaPageModule)
   }
 ];
 
