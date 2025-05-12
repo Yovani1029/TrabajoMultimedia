@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "811364312393",
+    "project_id": "multimedia-de4b0",
+    "storage_bucket": "multimedia-de4b0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811364312393:android:278787ccde132e33a62698",
+        "android_client_info": {
+          "package_name": "com.miaplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSS2r3Yjof7D659hyXGOCePPzQxVv8m6g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

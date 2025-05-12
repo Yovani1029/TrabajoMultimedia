@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar Imagen</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div *ngIf="imagePreview" class="image-preview">
+      <img [src]="imagePreview" alt="Vista previa de imagen" />
+    </div>
+
+    <ion-button expand="block" (click)="pickImage()" color="secondary">
+      Tomar o Seleccionar Imagen
+    </ion-button>
+
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-input type="text" formControlName="description"></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" [disabled]="form.invalid">
+      Guardar
+    </ion-button>
+  </form>
+
+</ion-content>
+
+<style>
+.image-preview {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+</style>
