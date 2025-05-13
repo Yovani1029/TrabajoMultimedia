@@ -9,14 +9,14 @@ import { getFirestore } from 'firebase/firestore';
   standalone: false
 })
 export class MultimediaPage implements OnInit {
-  multimedia: any[] = [];  // Lista de elementos multimedia
+  multimedia: any[] = [];
 
   constructor(private firestore: Firestore) {}
 
 ngOnInit() {
   this.loadMultimedia();
   setInterval(() => {
-    this.loadMultimedia(); // Recargar los datos cada 5 segundos
+    this.loadMultimedia();
   }, 5000);
 }
 
