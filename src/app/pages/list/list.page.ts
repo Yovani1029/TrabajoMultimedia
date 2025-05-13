@@ -15,6 +15,7 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.multimedia$ = this.multimediaService.getMultimedia();
+    
   }
 
   formatDate(date: any): string {

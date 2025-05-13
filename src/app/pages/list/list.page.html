@@ -1,23 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Registros</ion-title>
+    <ion-title class="ion-text-center">Lista de Registros</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-list *ngIf="multimedia$ | async as multimedia">
-    <ion-item *ngFor="let item of multimedia">
-      <ion-thumbnail slot="start">
+    <ion-item *ngFor="let item of multimedia" lines="full">
+      <ion-thumbnail slot="start" class="custom-thumbnail">
         <img [src]="item.imageUrl" />
       </ion-thumbnail>
       <ion-label>
-        <h2>{{ item.description }}</h2>
-        <p>{{ formatDate(item.createdAt) }}</p>
+        <h2 class="description">{{ item.description }}</h2>
+        <p class="date">{{ formatDate(item.createdAt) }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <ion-note *ngIf="!(multimedia$ | async)?.length" class="ion-padding">
+  <ion-note *ngIf="!(multimedia$ | async)?.length" class="ion-padding ion-text-center">
     No hay registros disponibles.
   </ion-note>
 </ion-content>
