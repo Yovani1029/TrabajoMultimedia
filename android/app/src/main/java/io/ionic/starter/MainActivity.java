@@ -1,11 +1,8 @@
 package io.ionic.starter;
 
 import com.getcapacitor.BridgeActivity;
-import com.getcapacitor.Plugin;
-import java.util.ArrayList;
-import android.os.Bundle;
 
-import io.ionic.starter.SharedPreferencesPlugin;
+import android.os.Bundle;
 
 public class MainActivity extends BridgeActivity {
   @Override

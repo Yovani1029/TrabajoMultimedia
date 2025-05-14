@@ -6,6 +6,8 @@ import { SupabaseService } from 'src/app/core/services/supabase.service';
 import { LoadingController, ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { SharedPreferencesService } from 'src/app/shared/shared-preferences.service';
+import { MultimediaService } from 'src/app/core/services/multimedia.service';
+
 
 @Component({
   selector: 'app-register',
@@ -28,7 +30,8 @@ export class RegisterPage {
     private supabase: SupabaseService,
     private loadingCtrl: LoadingController,
     private sharedPreferencesService: SharedPreferencesService,
-    private toastCtrl: ToastController // Inyecta ToastController
+    private toastCtrl: ToastController,
+    private multimedia: MultimediaService
   ) { }
 
   async pickImage() {
@@ -86,8 +89,11 @@ export class RegisterPage {
         alert('Ocurrió un error al obtener la URL de la imagen');
         return;
       }
-
-      await this.sharedPreferencesService.saveDataToPreferences(description, publicUrl);
+ 
+       this.multimedia.getMultimedia().subscribe(datico=>{
+          const data = datico;
+          this.sharedPreferencesService.saveDataToPreferences
+      });
 
       await addDoc(collection(this.firestore, 'multimedia'), {
         description,

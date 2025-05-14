@@ -1,24 +1,42 @@
 import { Injectable } from '@angular/core';
-import { SharedPreferences } from '../plugins/shared-preferences.plugin';
+import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedPreferencesService {
 
-  async saveDataToPreferences(description: string, imageUrl: string) {
+  async saveDataToPreferences(images: any) {
     try {
-      if (!description || !imageUrl) {
+      if (!images) {
         console.error('Faltan datos para guardar');
         return;
       }
-
-      await SharedPreferences.save({ key: 'description', value: description });
-      await SharedPreferences.save({ key: 'imageUrl', value: imageUrl });
+      console.log("holi.2" + images);
+      await Preferences.set({ key: 'images', value: images });
 
       console.log('Datos guardados correctamente en SharedPreferences');
     } catch (e) {
       console.error('Error al guardar en SharedPreferences', e);
     }
   }
+  
+  async getDataFromPreferences(): Promise<any> {
+  try {
+    const { value } = await Preferences.get({ key: 'images' });
+
+    if (!value) {
+      console.warn('No hay datos almacenados en SharedPreferences');
+      return null;
+    }
+
+    console.log('Datos recuperados correctamente:', value);
+    return value;
+  } catch (e) {
+    console.error('Error al obtener datos de SharedPreferences', e);
+    return null;
+  }
+}
+
+
 }

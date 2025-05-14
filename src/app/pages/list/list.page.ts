@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MultimediaService, MultimediaItem } from 'src/app/core/services/multimedia.service';
 import { Observable } from 'rxjs';
+import { SharedPreferencesService } from 'src/app/shared/shared-preferences.service';
 
 @Component({
   selector: 'app-list',
@@ -11,14 +12,22 @@ import { Observable } from 'rxjs';
 export class ListPage implements OnInit {
   multimedia$!: Observable<MultimediaItem[]>;
 
-  constructor(private multimediaService: MultimediaService) {}
+  constructor(private multimediaService: MultimediaService,
+    private shared: SharedPreferencesService
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     this.multimedia$ = this.multimediaService.getMultimedia();
-    
+    var data = await this.shared.getDataFromPreferences();
+    console.log("holis" + data)
+
   }
 
   formatDate(date: any): string {
     return new Date(date.seconds * 1000).toLocaleString();
   }
+
+
+
+  
 }

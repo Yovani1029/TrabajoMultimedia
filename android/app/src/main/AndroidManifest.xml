@@ -51,6 +51,7 @@
         android:resource="@xml/multimedia_widget_info" />
     </receiver>
 
+
   </application>
 
 </manifest>
