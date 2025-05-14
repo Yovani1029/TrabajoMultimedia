@@ -21,11 +21,7 @@ Este proyecto es una app móvil hecha con **Ionic y Angular**, donde puedes subi
 - Puedes subir una imagen con su descripción.
 - La imagen se guarda en Supabase y el texto en Firebase.
 - Se muestra una lista de todo lo que subiste.
-- Hay un **widget** que muestra la última imagen y descripción.
+- Hay un **widget** que muestra las imagenes registradas con sus respectivas descripciones.
 - El widget se actualiza **automáticamente cada 5 segundos**.
-- Hice un plugin nativo para guardar los datos desde Ionic a Android.
 
----
-
-## 📁 Organización del proyecto
 
