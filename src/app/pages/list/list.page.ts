@@ -18,8 +18,7 @@ export class ListPage implements OnInit {
 
   async ngOnInit() {
     this.multimedia$ = this.multimediaService.getMultimedia();
-    var data = await this.shared.getDataFromPreferences();
-    console.log("holis" + data)
+
 
   }
 

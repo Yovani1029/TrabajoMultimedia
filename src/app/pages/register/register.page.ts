@@ -92,7 +92,7 @@ export class RegisterPage {
  
        this.multimedia.getMultimedia().subscribe(datico=>{
           const data = datico;
-          this.sharedPreferencesService.saveDataToPreferences
+          this.sharedPreferencesService.saveDataToPreferences(data)
       });
 
       await addDoc(collection(this.firestore, 'multimedia'), {
